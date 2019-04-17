@@ -91,6 +91,7 @@ public class Start extends WebFrame {
     private long starttime = 0;
     private ScheduledFuture<?> shutdownServer, startRunTime;
     private WebHotkeyLabel[] labels;
+
     private boolean autoScroll = true;
     private WebHotkeyLabel runningTimelabel;
     private DatabaseConnection.DataBaseStatus dataBaseStatus;
