@@ -1,0 +1,9 @@
+Class-Path: lib/commons-io-2.5.jar lib/commons-pool2-2.4.2.jar lib/jac
+ kson-databind-2.8.5.jar lib/jackson-core-2.8.5.jar lib/jackson-annota
+ tions-2.8.5.jar lib/jedis-2.9.0.jar lib/jna-4.2.2.jar lib/log4j-api-2
+ .7.jar lib/log4j-core-2.7.jar lib/netty-all-4.1.6.Final.jar lib/mysql
+ -connector-java-5.1.40.jar lib/json-20160810.jar lib/druid-1.0.27.jar
+  lib/kotlin-stdlib-1.1.0.jar lib/annotations-13.0.jar lib/weblaf-comp
+ lete-1.29.jar
+Main-Class: server.console.Start
+

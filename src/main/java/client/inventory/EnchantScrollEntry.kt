@@ -1,0 +1,51 @@
+package client.inventory
+
+enum class EnchantScrollEntry constructor(val scrollName: String, val sucess: Int, val viewType: Int, val need: Int, val mask: Int, val values: IntArray) {
+    攻击_力量_100("攻击(力量)", 100, 0, 20, EnchantScrollFlag.力量.value or EnchantScrollFlag.物攻.value, intArrayOf(3, 1)),
+    攻击_力量_70("攻击(力量)", 70, 1, 25, EnchantScrollFlag.力量.value or EnchantScrollFlag.物攻.value, intArrayOf(5, 2)),
+    攻击_力量_30("攻击(力量)", 30, 2, 31, EnchantScrollFlag.力量.value or EnchantScrollFlag.物攻.value, intArrayOf(7, 3)),
+    攻击_力量_15("攻击(力量)", 15, 3, 39, EnchantScrollFlag.力量.value or EnchantScrollFlag.物攻.value, intArrayOf(9, 4)),
+    魔力_智力_100("魔力(智力)", 100, 0, 20, EnchantScrollFlag.智力.value or EnchantScrollFlag.魔攻.value, intArrayOf(3, 1)),
+    魔力_智力_70("魔力(智力)", 70, 1, 25, EnchantScrollFlag.智力.value or EnchantScrollFlag.魔攻.value, intArrayOf(5, 2)),
+    魔力_智力_30("魔力(智力)", 30, 2, 31, EnchantScrollFlag.智力.value or EnchantScrollFlag.魔攻.value, intArrayOf(7, 3)),
+    魔力_智力_15("魔力(智力)", 15, 3, 39, EnchantScrollFlag.智力.value or EnchantScrollFlag.魔攻.value, intArrayOf(9, 4)),
+    攻击_敏捷_100("攻击(敏捷)", 100, 0, 20, EnchantScrollFlag.敏捷.value or EnchantScrollFlag.物攻.value, intArrayOf(3, 1)),
+    攻击_敏捷_70("攻击(敏捷)", 70, 1, 25, EnchantScrollFlag.敏捷.value or EnchantScrollFlag.物攻.value, intArrayOf(5, 2)),
+    攻击_敏捷_30("攻击(敏捷)", 30, 2, 31, EnchantScrollFlag.敏捷.value or EnchantScrollFlag.物攻.value, intArrayOf(7, 3)),
+    攻击_敏捷_15("攻击(敏捷)", 15, 3, 39, EnchantScrollFlag.敏捷.value or EnchantScrollFlag.物攻.value, intArrayOf(9, 4)),
+    攻击_运气_100("攻击(运气)", 100, 0, 20, EnchantScrollFlag.运气.value or EnchantScrollFlag.物攻.value, intArrayOf(3, 1)),
+    攻击_运气_70("攻击(运气)", 70, 1, 25, EnchantScrollFlag.运气.value or EnchantScrollFlag.物攻.value, intArrayOf(5, 2)),
+    攻击_运气_30("攻击(运气)", 30, 2, 31, EnchantScrollFlag.运气.value or EnchantScrollFlag.物攻.value, intArrayOf(7, 3)),
+    攻击_运气_15("攻击(运气)", 15, 3, 39, EnchantScrollFlag.运气.value or EnchantScrollFlag.物攻.value, intArrayOf(9, 4)),
+    攻击_体力_100("攻击(体力)", 100, 0, 20, EnchantScrollFlag.Hp.value or EnchantScrollFlag.物攻.value, intArrayOf(3, 1)),
+    攻击_体力_70("攻击(体力)", 70, 1, 25, EnchantScrollFlag.Hp.value or EnchantScrollFlag.物攻.value, intArrayOf(5, 2)),
+    攻击_体力_30("攻击(体力)", 30, 2, 31, EnchantScrollFlag.Hp.value or EnchantScrollFlag.物攻.value, intArrayOf(7, 3)),
+    攻击_体力_15("攻击(体力)", 15, 3, 39, EnchantScrollFlag.Hp.value or EnchantScrollFlag.物攻.value, intArrayOf(9, 4)),
+    攻击_100("攻击", 100, 0, 25, EnchantScrollFlag.物攻.value, intArrayOf(1)),
+    攻击_70("攻击", 70, 2, 32, EnchantScrollFlag.物攻.value, intArrayOf(2)),
+    攻击_30("攻击", 30, 3, 39, EnchantScrollFlag.物攻.value, intArrayOf(3)),
+    魔力_100("魔力", 100, 0, 25, EnchantScrollFlag.魔攻.value, intArrayOf(1)),
+    魔力_70("魔力", 70, 2, 32, EnchantScrollFlag.魔攻.value, intArrayOf(2)),
+    魔力_30("魔力", 30, 3, 39, EnchantScrollFlag.魔攻.value, intArrayOf(3)),
+    力量_100("力量", 100, 0, 25, EnchantScrollFlag.力量.value, intArrayOf(3)),
+    力量_70("力量", 70, 2, 32, EnchantScrollFlag.力量.value, intArrayOf(4)),
+    力量_30("力量", 30, 3, 39, EnchantScrollFlag.力量.value, intArrayOf(7)),
+    体力_100("体力", 100, 0, 25, EnchantScrollFlag.Hp.value, intArrayOf(50)),
+    体力_70("体力", 70, 2, 32, EnchantScrollFlag.Hp.value, intArrayOf(100)),
+    体力_30("体力", 30, 3, 39, EnchantScrollFlag.Hp.value, intArrayOf(150)),
+    智力_100("智力", 100, 0, 25, EnchantScrollFlag.智力.value, intArrayOf(3)),
+    智力_70("智力", 70, 2, 32, EnchantScrollFlag.智力.value, intArrayOf(4)),
+    智力_30("智力", 30, 3, 39, EnchantScrollFlag.智力.value, intArrayOf(7)),
+    敏捷_100("敏捷", 100, 0, 25, EnchantScrollFlag.敏捷.value, intArrayOf(3)),
+    敏捷_70("敏捷", 70, 2, 32, EnchantScrollFlag.敏捷.value, intArrayOf(4)),
+    敏捷_30("敏捷", 30, 3, 39, EnchantScrollFlag.敏捷.value, intArrayOf(7)),
+    运气_100("运气", 100, 0, 25, EnchantScrollFlag.运气.value, intArrayOf(3)),
+    运气_70("运气", 70, 2, 32, EnchantScrollFlag.运气.value, intArrayOf(4)),
+    运气_30("运气", 30, 3, 39, EnchantScrollFlag.运气.value, intArrayOf(7)),
+    还原卷轴("还原卷轴", 30, 4, 7000, EnchantScrollFlag.NULL.value, IntArray(0)),
+    纯白卷轴("纯白卷轴", 5, 5, 2000, EnchantScrollFlag.NULL.value, IntArray(0));
+
+    fun getName(): String {
+        return if (viewType == 4) "还原卷轴$sucess%" else if (viewType == 5) "纯白卷轴$sucess%" else "$sucess%$scrollName" + "卷轴"
+    }
+}

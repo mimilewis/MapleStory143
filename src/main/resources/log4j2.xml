@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration monitorInterval="30">
+    <properties>
+        <property name="System_logPath">日志/系统日志</property>
+        <property name="User_logPath">日志/运维日志</property>
+        <property name="Debug_logPath">日志/调试日志</property>
+        <property name="备份_logPath">日志/备份</property>
+    </properties>
+    <appenders>
+        <!-- 控制台输出信息 -->
+        <Console name="控制台">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %l - %msg%n"/>
+        </Console>
+
+        <Console name="调试窗口">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %msg%n"/>
+        </Console>
+
+        <!-- 运维日志 -->
+        <File name="在线统计" filename="${User_logPath}/在线统计.log" append="true">
+            <PatternLayout pattern="%msg%n"/>
+        </File>
+
+        <RollingFile name="玩家交易" fileName="${User_logPath}/玩家交易.log"
+                     filePattern="${User_logPath}/备份/$${date:yyyy-MM-dd}/%d{yyyy-MM-dd} 玩家交易%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %l - %msg%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="玩家聊天" fileName="${User_logPath}/玩家聊天.log"
+                     filePattern="${User_logPath}/备份/$${date:yyyy-MM-dd}/%d{yyyy-MM-dd} 玩家聊天%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %l - %msg%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="雇佣商店" fileName="${User_logPath}/雇佣商店.log"
+                     filePattern="${User_logPath}/备份/$${date:yyyy-MM-dd}/%d{yyyy-MM-dd} 雇佣商店%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %l - %msg%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="雇佣钓鱼" fileName="${User_logPath}/雇佣钓鱼.log"
+                     filePattern="${User_logPath}/备份/$${date:yyyy-MM-dd}/%d{yyyy-MM-dd} 雇佣钓鱼%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %l - %msg%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="道具相关" fileName="${User_logPath}/道具相关.log"
+                     filePattern="${User_logPath}/备份/$${date:yyyy-MM-dd}/%d{yyyy-MM-dd} 道具相关%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %l - %msg%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="GM命令使用记录" fileName="${User_logPath}/GM命令使用记录.log"
+                     filePattern="${User_logPath}/备份/$${date:yyyy-MM-dd}/%d{yyyy-MM-dd} GM命令使用记录%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %l - %msg%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="封号记录" fileName="${User_logPath}/封号记录.log"
+                     filePattern="${User_logPath}/备份/$${date:yyyy-MM-dd}/%d{yyyy-MM-dd} 封号记录%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %l - %msg%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <!-- 系统日志 -->
+
+        <RollingFile name="服务端日志" fileName="${System_logPath}/服务端日志.log"
+                     filePattern="${System_logPath}/备份/$${date:yyyy-MM-dd}/%d{yyyy-MM-dd} 服务端日志%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %l - %msg%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="数据库日志" fileName="${System_logPath}/数据库日志.log"
+                     filePattern="${System_logPath}/备份/$${date:yyyy-MM-dd}/%d{yyyy-MM-dd} 数据库日志%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %l - %msg%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="封包日志" fileName="${System_logPath}/封包日志.log"
+                     filePattern="${System_logPath}/备份/$${date:yyyy-MM-dd}/%d{yyyy-MM-dd} 封包日志%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %l - %msg%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="技能日志" fileName="${System_logPath}/技能日志.log"
+                     filePattern="${System_logPath}/备份/$${date:yyyy-MM-dd}/%d{yyyy-MM-dd} 技能日志%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %l - %msg%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="脚本日志" fileName="${System_logPath}/脚本日志.log"
+                     filePattern="${System_logPath}/备份/$${date:yyyy-MM-dd}/%d{yyyy-MM-dd} 脚本日志%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %l - %msg%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="移动日志" fileName="${System_logPath}/移动日志.log"
+                     filePattern="${System_logPath}/备份/$${date:yyyy-MM-dd}/%d{yyyy-MM-dd} 移动日志%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %l - %msg%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="攻击日志" fileName="${System_logPath}/攻击日志.log"
+                     filePattern="${System_logPath}/备份/$${date:yyyy-MM-dd}/%d{yyyy-MM-dd} 攻击日志%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %l - %msg%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <!-- 调试日志 -->
+        <RollingFile name="所有封包" fileName="${Debug_logPath}/所有封包.log"
+                     filePattern="${Debug_logPath}/备份/$${date:yyyy-MM-dd}/%d{yyyy-MM-dd} 所有封包%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %msg%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="BUFF封包" fileName="${Debug_logPath}/BUFF封包.log"
+                     filePattern="${Debug_logPath}/备份/$${date:yyyy-MM-dd}/%d{yyyy-MM-dd} BUFF封包%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %msg%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+    </appenders>
+    <Loggers>
+
+        <!-- 运维日志 -->
+        <Logger name="在线统计" level="ALL">
+            <AppenderRef ref="在线统计"/>
+        </Logger>
+
+        <Logger name="server.MapleTrade" level="info" additivity="false">
+            <AppenderRef ref="玩家交易"/>
+        </Logger>
+
+        <Logger name="handling.channel.handler.ChatHandler" level="info" additivity="false">
+            <AppenderRef ref="玩家聊天"/>
+        </Logger>
+
+        <Logger name="server.shops.HiredMerchant" level="info" additivity="false">
+            <AppenderRef ref="雇佣商店"/>
+        </Logger>
+
+        <Logger name="HiredFisher" level="info" additivity="false">
+            <AppenderRef ref="雇佣钓鱼"/>
+        </Logger>
+
+        <Logger name="ItemLog" level="info" additivity="false">
+            <AppenderRef ref="道具相关"/>
+        </Logger>
+
+        <Logger name="server.commands.CommandProcessor" level="info" additivity="false">
+            <AppenderRef ref="GM命令使用记录"/>
+        </Logger>
+
+        <Logger name="server.AutobanManager" level="info" additivity="false">
+            <AppenderRef ref="封号记录"/>
+        </Logger>
+
+        <!-- 系统日志 -->
+        <Logger name="druid.sql.DataSource" level="error" additivity="false">
+            <AppenderRef ref="数据库日志"/>
+        </Logger>
+
+        <Logger name="druid.sql.Connection" level="error" additivity="false">
+            <AppenderRef ref="数据库日志"/>
+        </Logger>
+
+        <Logger name="druid.sql.Statement" level="error" additivity="false">
+            <AppenderRef ref="数据库日志"/>
+        </Logger>
+
+        <Logger name="druid.sql.ResultSet" level="error" additivity="false">
+            <AppenderRef ref="数据库日志"/>
+        </Logger>
+
+        <Logger name="PacketErrorLog" level="error" additivity="false">
+            <AppenderRef ref="封包日志"/>
+        </Logger>
+
+        <Logger name="client.skills" level="error" additivity="false">
+            <AppenderRef ref="技能日志"/>
+        </Logger>
+
+        <Logger name="scripting" level="info" additivity="false">
+            <AppenderRef ref="控制台"/>
+            <AppenderRef ref="脚本日志"/>
+        </Logger>
+
+        <Logger name="handling.channel.handler.MovementParse" level="error" additivity="false">
+            <AppenderRef ref="移动日志"/>
+        </Logger>
+
+        <Logger name="handling.channel.handler.DamageParse" level="error" additivity="false">
+            <AppenderRef ref="攻击日志"/>
+        </Logger>
+
+        <!-- 调试日志 -->
+        <Logger name="AllPackets" level="ALL" additivity="false">
+            <AppenderRef ref="所有封包"/>
+        </Logger>
+
+        <Logger name="BuffPackets" level="ALL" additivity="false">
+            <AppenderRef ref="BUFF封包"/>
+        </Logger>
+
+        <Logger name="AttackPackets" level="ALL" additivity="false">
+            <AppenderRef ref="攻击日志"/>
+        </Logger>
+
+        <Logger name="DebugWindows" level="ALL" additivity="false">
+            <AppenderRef ref="调试窗口"/>
+        </Logger>
+
+        <root level="info">
+            <AppenderRef ref="控制台"/>
+            <AppenderRef ref="服务端日志"/>
+        </root>
+    </Loggers>
+</configuration>
