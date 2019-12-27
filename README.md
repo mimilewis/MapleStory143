@@ -12,6 +12,7 @@ Here are the WZ files and SQL files you need
 
 [3]MEGA网盘（大陆部分地区可以访问）：https://mega.nz/#!OQBX0ILZ!PP92J-uexcb6ctzEIz14X7AxdfGC3VKRr-GaExBeuHE
 
+不要用自带的exe文件启动服务端，据说这个文件有木马
 don't use exe file to start server,maybe this file is not safe
 
 客户端使用的是国服143版本的客户端，自行下载吧，避免侵权
